@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172e36">
+  <title>About Us | D.R.E.A.M. Research &amp; Rehabilitation</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #202020;
+      color: #e9edef;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0 3px;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+      border: 1px solid #3a4144;
+      border-radius: 0 0 12px 12px;
+      background: #303030;
+    }
+
+    .hero {
+      padding: 20px 20px 19px;
+      background: #172e36;
+    }
+
+    .site-header {
+      position: relative;
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #566267;
+      padding-bottom: 19px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-mark-frame {
+      position: relative;
+      display: block;
+      width: 140px;
+      height: 31px;
+      overflow: hidden;
+    }
+
+    .brand-mark {
+      position: absolute;
+      top: -91px;
+      left: -42px;
+      display: block;
+      width: 224px;
+      height: 224px;
+      max-width: none;
+      mix-blend-mode: screen;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .menu-button {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: #e9edef;
+      cursor: pointer;
+    }
+
+    .menu-button:hover,
+    .menu-button:focus-visible {
+      background: #29434c;
+    }
+
+    .menu-button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid #88c6e2;
+      outline-offset: 3px;
+    }
+
+    .menu-icon,
+    .menu-icon::after {
+      display: block;
+      width: 19px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .menu-icon {
+      position: relative;
+    }
+
+    .menu-icon::after {
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+
+    .menu-panel {
+      position: absolute;
+      z-index: 1;
+      top: 61px;
+      right: 0;
+      display: grid;
+      min-width: 190px;
+      gap: 2px;
+      padding: 8px;
+      border: 1px solid #53646a;
+      border-radius: 8px;
+      background: #203840;
+      box-shadow: 0 8px 24px #0005;
+    }
+
+    .menu-panel[hidden] {
+      display: none;
+    }
+
+    .menu-panel a {
+      padding: 10px 12px;
+      border-radius: 5px;
+      color: #e9edef;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .menu-panel a:hover {
+      background: #314c55;
+    }
+
+    .about-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 24px 40px;
+    }
+
+    footer {
+      padding-left: 24px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: #f2f4f5;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      margin: 0 0 18px;
+      color: #d7d7d7;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 16px 16px 18px;
+      }
+
+      .site-header {
+        min-height: 68px;
+        padding-bottom: 15px;
+      }
+
+      .brand-mark-frame {
+        width: 120px;
+        height: 27px;
+      }
+
+      .brand-mark {
+        top: -78px;
+        left: -36px;
+        width: 192px;
+        height: 192px;
+      }
+
+      .brand-subtitle {
+        font-size: 12px;
+      }
+
+      .about-content {
+        padding: 24px 16px 32px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .about-content p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <header class="site-header">
+        <a class="brand" href="home.html" aria-label="D.R.E.A.M. Research and Rehabilitation home">
+          <span class="brand-mark-frame">
+            <img class="brand-mark" src="Geometric%20DREAM%20Wordmark%20on%20Black.png" alt="DREAM">
+          </span>
+          <span class="brand-subtitle">RESEARCH & REHABILITATION</span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="menu-panel" id="site-menu" aria-label="Main navigation" hidden>
+          <a href="aboutus.html">Our refugee programme</a>
+          <a href="safety.html">Safety and rehabilitation</a>
+          <a href="registration.html">Registration</a>
+          <a href="meetourstaff.html">Our Staff</a>
+          <a href="aboutus.html" aria-current="page">About us</a>
+        </nav>
+      </header>
+    </section>
+    <article class="about-content">
+<h1>About Us</h1>
+
+      <h2>Our History</h2>
+          <p>For most of history, lucid dreaming was considered little more than an unusual phenomenon — the ability to recognise a dream while still inside it, and, in some cases, to influence the world within.</p>
+          <p>But a small number of dreamers reported something different.</p>
+          <p>Their dreams were not always shaped by memory or imagination. They described unfamiliar locations with impossible consistency. They recalled conversations with people they had never met. Some claimed to revisit the same places night after night, discovering details that seemed to exist independently of their own minds.</p>
+          <p>And then, people began to notice.</p>
+      <br>
+      <h2>The Hunt</h2>
+        <p>By the late twentieth century, reports of these individuals had attracted the attention of private research groups, clandestine organisations, and people willing to exploit anything they could not explain.</p>
+        <p>Lucid dreamers were followed, questioned, and taken from their homes. Some disappeared without explanation. Others returned frightened and unwilling to speak about what they had experienced</p>
+        <p>Their ability made them valuable.</p>
+        <p>To those who sought control, a dreamer was not a person in need of protection. They were a possible doorway — a means of observing something beyond the known world, perhaps even reaching places that should have remained inaccessible.</p>
+        <p>The evidence was fragmented: missing-person reports, intercepted correspondence, medical records with unexplained revisions. No single document revealed the full picture. Together, however, they suggested a pattern that could no longer be ignored.</p>
+        <p>The dreamers were being hunted for what they might be able to reach.</p>
+      <br>
+      <h2>The Decision</h2>
+        <p>D.R.E.A.M. was originally established as a research centre dedicated to studying lucid dreaming, documenting unusual experiences, and providing support to individuals whose abilities had left them isolated. Its original purpose was research.</p>
+        <p>Its priorities changed when it became clear that some residents were no longer safe.</p>
+        <p>In response, the organisation made a decision that would redefine its future: the centre would be transferred to a secure, undisclosed safe house.</p>
+        <p>Officially, the relocation was described as an administrative restructuring. Public records referred to equipment transfers, facility consolidation, and the discontinuation of several research programmes.</p>
+        <p>The internal records tell a different story.</p>
+        <p>Residents were moved under strict confidentiality. Their identities were replaced with subject numbers. Communications were restricted, visitor access was suspended, and the new location was removed from ordinary institutional records.</p>
+        <p>The safe house was intended to be a refuge — a place where dreamers could sleep without fear of being taken, studied by outsiders, or forced to explain something they barely understood themselves.</p>
+        <p>For the first time, D.R.E.A.M. promised its residents that their abilities would not make them targets within its walls.</p>
+      <br>
+      <h2>Our Mission</h2>
+        <p>Today, D.R.E.A.M. operates under three principles:</p>
+        <p style="font-weight: bold;">Protection: To provide a secure environment for lucid dreamers at risk of exploitation or persecution.</p>
+        <p style="font-weight: bold;">Understanding: To document unusual dream phenomena through careful observation and research.</p>
+        <p style="font-weight: bold;">Confidentiality: To protect the identities, histories, and experiences of every resident entrusted to our care.</p>
+        <p>We believe that no individual should be hunted for an ability they did not choose.</p>
+        <p>We believe that the unknown should be approached with caution, not greed.</p>
+        <p>And we believe that everyone deserves a place where they can close their eyes without wondering who might be waiting when they open them.</p>
+
+
+    </article>
+    <footer>D.R.E.A.M. Research Facility · Established 1998 · All rights reserved.</footer>
+  </main>
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const menu = document.querySelector("#site-menu");
+
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isExpanded));
+      menuButton.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+      menu.hidden = isExpanded;
+    });
+
+    menu.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        menu.hidden = true;
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+  </script>
+</body>
+</html>

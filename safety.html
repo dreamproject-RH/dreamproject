@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety and Rehabilitation</title>
+
+    <style>
+    :root {
+      color-scheme: dark;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #202020;
+      color: #e9edef;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0 3px;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+      border: 1px solid #3a4144;
+      border-radius: 0 0 12px 12px;
+      background: #303030;
+    }
+
+    .hero {
+      padding: 20px 20px 19px;
+      background: #172e36;
+    }
+
+    .site-header {
+      position: relative;
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #566267;
+      padding-bottom: 19px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-mark-frame {
+      position: relative;
+      display: block;
+      width: 140px;
+      height: 31px;
+      overflow: hidden;
+    }
+
+    .brand-mark {
+      position: absolute;
+      top: -91px;
+      left: -42px;
+      display: block;
+      width: 224px;
+      height: 224px;
+      max-width: none;
+      mix-blend-mode: screen;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .menu-button {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: #e9edef;
+      cursor: pointer;
+    }
+
+    .menu-button:hover,
+    .menu-button:focus-visible {
+      background: #29434c;
+    }
+
+    .menu-button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid #88c6e2;
+      outline-offset: 3px;
+    }
+
+    .menu-icon,
+    .menu-icon::after {
+      display: block;
+      width: 19px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .menu-icon {
+      position: relative;
+    }
+
+    .menu-icon::after {
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+
+    .menu-panel {
+      position: absolute;
+      z-index: 1;
+      top: 61px;
+      right: 0;
+      display: grid;
+      min-width: 190px;
+      gap: 2px;
+      padding: 8px;
+      border: 1px solid #53646a;
+      border-radius: 8px;
+      background: #203840;
+      box-shadow: 0 8px 24px #0005;
+    }
+
+    .menu-panel[hidden] {
+      display: none;
+    }
+
+    .menu-panel a {
+      padding: 10px 12px;
+      border-radius: 5px;
+      color: #e9edef;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .menu-panel a:hover {
+      background: #314c55;
+    }
+
+    .about-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 24px 40px;
+    }
+
+    footer {
+      padding-left: 24px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: #f2f4f5;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      margin: 0 0 18px;
+      color: #d7d7d7;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 16px 16px 18px;
+      }
+
+      .site-header {
+        min-height: 68px;
+        padding-bottom: 15px;
+      }
+
+      .brand-mark-frame {
+        width: 120px;
+        height: 27px;
+      }
+
+      .brand-mark {
+        top: -78px;
+        left: -36px;
+        width: 192px;
+        height: 192px;
+      }
+
+      .brand-subtitle {
+        font-size: 12px;
+      }
+
+      .about-content {
+        padding: 24px 16px 32px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .about-content p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <header class="site-header">
+                <a class="brand" href="home.html" aria-label="D.R.E.A.M. Research and Rehabilitation home">
+                <span class="brand-mark-frame">
+                    <img class="brand-mark" src="Geometric%20DREAM%20Wordmark%20on%20Black.png" alt="DREAM">
+                </span>
+                <span class="brand-subtitle">RESEARCH &amp; REHABILITATION</span>
+                </a>
+                <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
+                <span class="menu-icon" aria-hidden="true"></span>
+                </button>
+                <nav class="menu-panel" id="site-menu" aria-label="Main navigation" hidden>
+                <a href="aboutus.html">Our refugee programme</a>
+                <a href="safety.html">Safety and rehabilitation</a>
+                <a href="registration.html">Registration</a>
+                <a href="meetourstaff.html">Our Staff</a>
+                <a href="aboutus.html" aria-current="page">About us</a>
+                </nav>
+            </header>
+        </section>
+        <section>
+        
+
+
+
+
+
+
+    </main>
+    <script>
+        const menuButton = document.querySelector(".menu-button");
+        const menu = document.querySelector("#site-menu");
+
+        menuButton.addEventListener("click", () => {
+        const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isExpanded));
+        menuButton.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+        menu.hidden = isExpanded;
+        });
+
+        menu.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement) {
+            menu.hidden = true;
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+        }
+        });
+    </script>
+</body>
+</html>
