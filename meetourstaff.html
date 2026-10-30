@@ -4,9 +4,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Staff</title>
+    <title>Our Staff</title>  
+    <style>
+    :root {
+      color-scheme: dark;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #202020;
+      color: #e9edef;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0 3px;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+      border: 1px solid #3a4144;
+      border-radius: 0 0 12px 12px;
+      background: #303030;
+    }
+
+    .hero {
+      padding: 20px 20px 19px;
+      background: #172e36;
+    }
+
+    .site-header {
+      position: relative;
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #566267;
+      padding-bottom: 19px;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-mark-frame {
+      position: relative;
+      display: block;
+      width: 140px;
+      height: 31px;
+      overflow: hidden;
+    }
+
+    .brand-mark {
+      position: absolute;
+      top: -91px;
+      left: -42px;
+      display: block;
+      width: 224px;
+      height: 224px;
+      max-width: none;
+      mix-blend-mode: screen;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .menu-button {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: #e9edef;
+      cursor: pointer;
+    }
+
+    .menu-button:hover,
+    .menu-button:focus-visible {
+      background: #29434c;
+    }
+
+    .menu-button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid #88c6e2;
+      outline-offset: 3px;
+    }
+
+    .menu-icon,
+    .menu-icon::after {
+      display: block;
+      width: 19px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .menu-icon {
+      position: relative;
+    }
+
+    .menu-icon::after {
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+
+    .menu-panel {
+      position: absolute;
+      z-index: 1;
+      top: 61px;
+      right: 0;
+      display: grid;
+      min-width: 190px;
+      gap: 2px;
+      padding: 8px;
+      border: 1px solid #53646a;
+      border-radius: 8px;
+      background: #203840;
+      box-shadow: 0 8px 24px #0005;
+    }
+
+    .menu-panel[hidden] {
+      display: none;
+    }
+
+    .menu-panel a {
+      padding: 10px 12px;
+      border-radius: 5px;
+      color: #e9edef;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .menu-panel a:hover {
+      background: #314c55;
+    }
+
+    .about-content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 24px 40px;
+    }
+
+    footer {
+      padding-left: 24px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: #f2f4f5;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      margin: 0 0 18px;
+      color: #d7d7d7;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 16px 16px 18px;
+      }
+
+      .site-header {
+        min-height: 68px;
+        padding-bottom: 15px;
+      }
+
+      .brand-mark-frame {
+        width: 120px;
+        height: 27px;
+      }
+
+      .brand-mark {
+        top: -78px;
+        left: -36px;
+        width: 192px;
+        height: 192px;
+      }
+
+      .brand-subtitle {
+        font-size: 12px;
+      }
+
+      .about-content {
+        padding: 24px 16px 32px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .about-content p {
+        font-size: 16px;
+      }
+    }
+
+    .staff-grid {
+        display: grid;
+        /* Automatically wraps cards, making them at least 250px wide */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Spacing between columns and rows */
+        gap: 24px; 
+        padding: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .staff-id {
+        background-color: #202020;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .staff-id:hover {
+        transform: translateY(-5px);
+    }
+
+    .staff-photo {
+       width: 100px;
+        height: 100px;
+        border-radius: 50%; /* Keeps the avatar circular */
+        object-fit: cover; /* Prevents image squishing */
+        margin-bottom: 16px;
+    }
+
+    .profile-name {
+        font-size: 20px;
+        margin: 0 0 8px;
+        color: #f2f4f5;
+        margin-bottom: 8px;
+    }
+
+    .profile-title {
+        font-size: 16px;
+        margin: 0 0 16px;
+        color: #a0a0a0;
+    }
+
+  </style>  
 </head>
+
 <body>
-    
+  <main class="page">
+    <section class="hero">
+      <header class="site-header">
+        <a class="brand" href="home.html" aria-label="D.R.E.A.M. Research and Rehabilitation home">
+          <span class="brand-mark-frame">
+            <img class="brand-mark" src="Geometric%20DREAM%20Wordmark%20on%20Black.png" alt="DREAM">
+          </span>
+          <span class="brand-subtitle">RESEARCH & REHABILITATION</span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="menu-panel" id="site-menu" aria-label="Main navigation" hidden>
+          <a href="aboutus.html">Our refugee programme</a>
+          <a href="safety.html">Safety and rehabilitation</a>
+          <a href="registration.html">Registration</a>
+          <a href="meetourstaff.html">Our Staff</a>
+          <a href="aboutus.html" aria-current="page">About us</a>
+        </nav>
+      </header>
+    </section>
+    <section class="about-content">
+      <h1>Meet Our Staff</h1>
+      <p>Our team of dedicated professionals is committed to providing the highest level of care and support to our clients. Each member brings a wealth of experience and expertise to their role, ensuring that we can meet the diverse needs of those we serve.</p>
+      <p>From our compassionate counselors to our skilled medical staff, every individual at D.R.E.A.M. Research Facility plays a vital role in creating a safe and nurturing environment for our clients. We believe in continuous learning and professional development, which allows us to stay at the forefront of best practices in research and rehabilitation.</p>
+      <p>Together, we strive to make a positive impact on the lives of those who come through our doors.</p>
+    </section>
+    <section class="staff-grid">
+        <!--Profile Card for Dr. Mara Voss-->
+        <div class="staff-id">
+            <img src="staff1.jpg" alt="Dr. Mara Voss, Director of Research" class="staff-photo">
+            <h2 class="profile-name">Dr. Mara Voss</h2>
+            <p class="profile-title">Director of Research</p>
+            <p>Dr. Mara Voss leads our research initiatives, focusing on innovative approaches to rehabilitation and the development of evidence-based practices that enhance client outcomes.</p>  
+        </div>
+
+        <!--Profile Card for Dr. Alan Brown-->
+        <div class="staff-id">
+            <img src="staff3.jpg" alt="Dr. Alan Brown, Senior Researcher" class="staff-photo">
+            <h2 class="profile-name">Dr. Alan Brown</h2>
+            <p class="profile-title">Senior Researcher</p>
+            <p>Dr. Alan Brown has extensive experience in clinical research and is dedicated to advancing our understanding of rehabilitation techniques through rigorous scientific inquiry.</p>
+        </div>
+
+         <!--Profile Card for Dr. Sarah Lee-->
+        <div class="staff-id">
+            <img src="staff6.jpg" alt="Dr. Sarah Lee, Research Coordinator" class="staff-photo">
+            <h2 class="profile-name">Dr. Sarah Lee</h2>
+            <p class="profile-title">Research Coordinator</p>  
+            <p>Dr. Sarah Lee is responsible for coordinating research projects and ensuring seamless collaboration between team members.</p>
+        </div>
+
+        <!--Profile Card for Dr. Jane Smith-->
+        <div class="staff-id">
+            <img src="staff2.jpg" alt="Dr. Jane Smith, Lead Psychologist" class="staff-photo">
+            <h2 class="profile-name">Dr. Jane Smith</h2>
+            <p class="profile-title">Lead Psychologist</p>
+            <p>Dr. Jane Smith is a licensed psychologist with over a decade of experience in providing therapeutic support to individuals facing various mental health challenges.</p>
+        </div>
+
+        <!--Profile Card for Dr. Emily White-->
+        <div class="staff-id">
+            <img src="staff4.jpg" alt="Dr. Emily White, Rehabilitation Specialist" class="staff-photo">
+            <h2 class="profile-name">Dr. Emily White</h2>
+            <p class="profile-title">Rehabilitation Specialist</p>
+            <p>Dr. Emily White specializes in developing and implementing rehabilitation programs that are tailored to the unique needs of each client, ensuring optimal recovery and reintegration into society.</p>
+        </div>
+
+        <!--Profile Card for Dr. John Doe-->
+        <div class="staff-id">
+            <img src="staff5.jpg" alt="Dr. John Doe, Clinical Director" class="staff-photo">
+            <br>
+            <br>
+            <h2 class="profile-name">Dr. John Doe</h2>
+            <p class="profile-title">Clinical Director</p>
+            <br>
+            <p>Dr. John Doe oversees the clinical operations of the facility, ensuring that all therapeutic interventions are evidence-based and tailored to individual client needs.</p>
+        </div>
+
+
+    </section>
+
+    <br>
+    <footer>D.R.E.A.M. Research Facility · Established 1998 · All rights reserved.</footer>
+  </main>
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const menu = document.querySelector("#site-menu");
+
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isExpanded));
+      menuButton.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+      menu.hidden = isExpanded;
+    });
+
+    menu.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        menu.hidden = true;
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+  </script>
 </body>
 </html>
