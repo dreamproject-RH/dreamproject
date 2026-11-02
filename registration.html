@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="../">
-    <title>Safety and Rehabilitation</title>
-
-    <style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172e36">
+  <title>Registration | D.R.E.A.M. Research &amp; Rehabilitation</title>
+  <style>
     :root {
       color-scheme: dark;
       font-family: Arial, Helvetica, sans-serif;
@@ -161,7 +159,7 @@
       background: #314c55;
     }
 
-    .about-content {
+    .registration-info {
       max-width: 860px;
       margin: 0 auto;
       padding: 28px 24px 40px;
@@ -178,15 +176,33 @@
       line-height: 1.2;
     }
 
-    .about-content p {
+    .registration-info p {
       margin: 0 0 18px;
       color: #d7d7d7;
       font-size: 18px;
       line-height: 1.6;
     }
 
-    .about-content p:last-child {
+    .registration-info p:last-child {
       margin-bottom: 0;
+    }
+
+    .Registration-form {
+      margin-top: 20px;
+      text-align: center;
+
+    }
+
+    .Registration-form a:hover {
+      color: white;
+      border: 1px solid #53646a;
+      border-radius: 8px;
+      border-bottom: 4px solid #53646a;
+    }
+
+    .Registration-form a {
+      color: #88c6e2;
+      text-decoration: none;
     }
 
     @media (max-width: 520px) {
@@ -215,7 +231,7 @@
         font-size: 12px;
       }
 
-      .about-content {
+      .registration-info {
         padding: 24px 16px 32px;
       }
 
@@ -223,61 +239,63 @@
         font-size: 26px;
       }
 
-      .about-content p {
+      .registration-info p {
         font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-    <main>
-        <section class="hero">
-            <header class="site-header">
-                <a class="brand" href="./" aria-label="D.R.E.A.M. Research and Rehabilitation home">
-                <span class="brand-mark-frame">
-                    <img class="brand-mark" src="Geometric%20DREAM%20Wordmark%20on%20Black.png" alt="DREAM">
-                </span>
-                <span class="brand-subtitle">RESEARCH &amp; REHABILITATION</span>
-                </a>
-                <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
-                <span class="menu-icon" aria-hidden="true"></span>
-                </button>
-                <nav class="menu-panel" id="site-menu" aria-label="Main navigation" hidden>
-                <a href="aboutus/">Our refugee programme</a>
-                <a href="safety/">Safety and rehabilitation</a>
-                <a href="registration/">Registration</a>
-                <a href="meetourstaff/">Our Staff</a>
-                <a href="aboutus/" aria-current="page">About us</a>
-                </nav>
-            </header>
-        </section>
-        <section>
-        
+  <main class="page">
+    <section class="hero">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="D.R.E.A.M. Research and Rehabilitation home">
+          <span class="brand-mark-frame">
+            <img class="brand-mark" src="Geometric%20DREAM%20Wordmark%20on%20Black.png" alt="DREAM">
+          </span>
+          <span class="brand-subtitle">RESEARCH & REHABILITATION</span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
+          <span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="menu-panel" id="site-menu" aria-label="Main navigation" hidden>
+          <a href="aboutus.html">Our refugee programme</a>
+          <a href="safety.html">Safety and rehabilitation</a>
+          <a href="registration.html" aria-current="page">Registration</a>
+          <a href="meetourstaff.html">Our Staff</a>
+          <a href="aboutus.html">About us</a>
+        </nav>
+      </header>
+    </section>
 
+    <article class="registration-info">
+      <h1>Registration</h1>
+      <p>Welcome to our registration page. Please download and fill out the form below to get started.</p>
+      <p class="Registration-form"><a href="Refugees-Asylum-Seekers-Registration-Form-DREAM.docx" download="">Download Registration Form (DOCX)</a></p>
+      <p>Once completed, please submit the form to our office or email it to us at <a href="mailto:registration@dream.org">registration@dream.org</a>.</p>
+      
+    </article>
 
+    <footer>D.R.E.A.M. Research Facility · Established 1998 · All rights reserved.</footer>
+  </main>
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const menu = document.querySelector("#site-menu");
 
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isExpanded));
+      menuButton.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+      menu.hidden = isExpanded;
+    });
 
-
-
-    </main>
-    <script>
-        const menuButton = document.querySelector(".menu-button");
-        const menu = document.querySelector("#site-menu");
-
-        menuButton.addEventListener("click", () => {
-        const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
-        menuButton.setAttribute("aria-expanded", String(!isExpanded));
-        menuButton.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
-        menu.hidden = isExpanded;
-        });
-
-        menu.addEventListener("click", (event) => {
-        if (event.target instanceof HTMLAnchorElement) {
-            menu.hidden = true;
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation menu");
-        }
-        });
-    </script>
+    menu.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        menu.hidden = true;
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+  </script>
 </body>
 </html>
