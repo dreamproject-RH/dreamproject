@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#172e36">
+  <meta name="theme-color" content="#0E1B36">
   <title>D.R.E.A.M. Research &amp; Rehabilitation</title>
   <style>
     :root {
@@ -341,7 +341,213 @@
      
 
     }
+    :root {
+      --color-primary: #0E1B36;
+      --color-secondary: #4A5568;
+      --color-neutral: #F7FAFC;
+      --color-tech: #00A3C4;
+      --color-highlight: #FF6B00;
+      color-scheme: light;
+      background: var(--color-neutral);
+      color: var(--color-primary);
+    }
+
+    body,
+    .page,
+    .details {
+      background: var(--color-neutral);
+      color: var(--color-primary);
+    }
+
+    .page {
+      border-color: var(--color-secondary);
+    }
+
+    .hero {
+      background: var(--color-primary);
+      color: var(--color-neutral);
+    }
+
+    .site-header {
+      border-bottom-color: var(--color-secondary);
+    }
+
+    .menu-button:hover,
+    .menu-button:focus-visible,
+    .signin-button:hover,
+    .menu-panel a:hover {
+      background: var(--color-secondary);
+    }
+
+    .menu-button:focus-visible,
+    a:focus-visible {
+      outline-color: var(--color-tech);
+    }
+
+    .menu-panel {
+      border-color: var(--color-secondary);
+      background: var(--color-primary);
+    }
+
+    .menu-panel a {
+      color: var(--color-neutral);
+    }
+
+    .eyebrow,
+    .feature:first-child .feature-icon {
+      color: var(--color-highlight);
+    }
+
+    h1,
+    .feature h2 {
+      color: var(--color-primary);
+    }
+
+    .lead,
+    .feature p,
+    footer {
+      color: var(--color-secondary);
+    }
+
+    .hero h1,
+    .hero .lead {
+      color: var(--color-neutral);
+    }
+
+    .programme-link {
+      background: var(--color-tech);
+      color: var(--color-primary);
+    }
+
+    .programme-link:hover {
+      background: var(--color-highlight);
+    }
+
+    .feature-icon {
+      color: var(--color-secondary);
+    }
+
+    .hero-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .programme-link {
+      margin: 0;
+    }
+
+    .programme-secondary {
+      justify-self: center;
+      color: var(--color-neutral);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .home-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      border-top: 1px solid #d5dbe3;
+    }
+
+    .home-section h2 {
+      margin: 0 0 12px;
+      color: var(--color-primary);
+      font-size: 24px;
+    }
+
+    .home-section p,
+    .home-section li {
+      color: var(--color-secondary);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .steps-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .steps-list strong {
+      color: var(--color-primary);
+    }
+
+    .home-section a {
+      color: #007f9b;
+      text-underline-offset: 3px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-list details {
+      padding: 14px 16px;
+      border: 1px solid #d5dbe3;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .faq-list summary {
+      color: var(--color-primary);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq-list p {
+      margin: 10px 0 0;
+    }
+
+    .notice {
+      padding: 16px;
+      border-left: 4px solid var(--color-highlight);
+      background: #fff;
+    }
+
+    .contact-email {
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .site-footer {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 24px 16px;
+      border-top: 1px solid #d5dbe3;
+      color: var(--color-secondary);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+    }
+
+    .footer-links a {
+      color: #007f9b;
+    }
+
+    @media (max-width: 520px) {
+      .home-section {
+        padding: 24px 16px;
+      }
+
+      .home-section h2 {
+        font-size: 21px;
+      }
+
+      .home-section p,
+      .home-section li {
+        font-size: 16px;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="email-glitch.css">
 </head>
 <body>
   <main class="page">
@@ -370,7 +576,10 @@
         <p class="eyebrow">DEPARTMENT OF REFUGEE EVALUATION &amp; ANOMALOUS MIND STUDIES</p>
         <h1 id="page-title">The Safe Haven for Lucid Dreamers.</h1>
         <p class="lead">Providing shelter, care, and specialised support for individuals experiencing extraordinary lucid dreaming phenomena.</p>
-        <a class="programme-link" id="programme" href="aboutus.html">OUR REFUGEE PROGRAMME</a>
+        <div class="hero-actions">
+          <a class="programme-link" href="registration.html">Start registration</a>
+          <a class="programme-secondary" id="programme" href="aboutus.html">Learn more about our programme</a>
+        </div>
       </div>
     </section>
 
@@ -393,7 +602,7 @@
           </svg>
           <div>
             <h2>Sleep research</h2>
-            <p>Advancing our understanding of consciousness and lucid dreaming.</p>
+            <p>Advancing our understanding of consciousness and lucid dreaming with ethical research practices.</p>
           </div>
         </li>
         <li class="feature" id="beginning">
@@ -403,12 +612,66 @@
           </svg>
           <div>
             <h2>A new beginning</h2>
-            <p>Confidential support for individuals seeking refuge.</p>
+            <p>Confidential support for individuals seeking refuge and a fresh start.</p>
           </div>
         </li>
       </ul>
-      <footer>D.R.E.A.M. Research Facility · Established 1998 · All rights reserved.</footer>
     </section>
+
+    <section class="home-section" aria-labelledby="getting-started">
+      <h2 id="getting-started">What to expect</h2>
+      <ol class="steps-list">
+        <li><strong>Download the form.</strong> Get the registration form from the <a href="registration.html">Registration page</a>.</li>
+        <li><strong>Complete the required fields.</strong> Check that the information is accurate before sending it.</li>
+        <li><strong>Email your completed form.</strong> Send it to <a href="mailto:dreamprojectregistration@gmail.com?subject=Registration%20Form%20Submission">dreamprojectregistration@gmail.com</a> with the subject “Registration Form Submission” and the name you want us to use for reference.</li>
+        <li><strong>Allow time for processing.</strong> The registration page notes that processing may take several business days.</li>
+      </ol>
+    </section>
+
+    <section class="home-section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Who is eligible to register?</summary>
+          <p>The programme is for lucid dreamers. If you are unsure whether it is right for you, contact the team before applying.</p>
+        </details>
+        <details>
+          <summary>What support does D.R.E.A.M. offer?</summary>
+          <p>D.R.E.A.M. describes its work as providing shelter, care, and specialised support for people experiencing unusual lucid dreaming phenomena. See <a href="safety.html">Safety and rehabilitation</a> for more information.</p>
+        </details>
+        <details>
+          <summary>How long does registration take?</summary>
+          <p>Processing may take several business days. Make sure your form is complete and includes the requested email subject and reference name.</p>
+        </details>
+        <details>
+          <summary>How is my personal information handled?</summary>
+          <p>This website does not currently explain how submitted information is handled. The completed registration form is sent by email; contact the team with privacy questions before sending it, and do not include extra sensitive information that the form does not request.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact us</h2>
+      <p>Questions about eligibility or the registration process? Email the team at <a class="contact-email" href="mailto:dreamprojectregistration@gmail.com">dreamprojectregistration@gmail.com</a>.</p>
+    </section>
+
+    <section class="home-section" id="privacy" aria-labelledby="safety-heading">
+      <h2 id="safety-heading">Privacy and urgent help</h2>
+      <p class="notice">The completed registration form is sent by email. The site does not provide details about how submitted information is handled; contact the team with privacy questions before sending the form. Avoid including sensitive information beyond what the form requests.</p>
+      <p>This website is not an emergency service. If you are in immediate danger, contact your local emergency services.</p>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="footer-links" aria-label="Footer">
+        <a href="aboutus.html">About us</a>
+        <a href="safety.html">Safety and rehabilitation</a>
+        <a href="registration.html">Registration</a>
+        <a href="meetourstaff.html">Meet our staff</a>
+        <a href="mailto:dreamprojectregistration@gmail.com">Contact</a>
+        <a href="#privacy">Privacy and safety</a>
+      </nav>
+      <span>D.R.E.A.M. Research Facility · Established 1998 · All rights reserved.</span>
+    </footer>
   </main>
   <script>
     const menuButton = document.querySelector(".menu-button");
@@ -429,5 +692,6 @@
       }
     });
   </script>
+  <script src="email-glitch.js"></script>
 </body>
 </html>

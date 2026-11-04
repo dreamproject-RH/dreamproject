@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0E1B36">
     <title>Research</title>
+    <style>
+        :root {
+            --color-primary: #0E1B36;
+            --color-secondary: #4A5568;
+            --color-neutral: #F7FAFC;
+            --color-tech: #00A3C4;
+            --color-highlight: #FF6B00;
+            color-scheme: light;
+            background: var(--color-neutral);
+            color: var(--color-primary);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: var(--color-neutral);
+            color: var(--color-primary);
+        }
+
+        .site-footer {
+            display: grid;
+            gap: 14px;
+            margin: 0;
+            padding: 24px 16px;
+            border-top: 1px solid #d5dbe3;
+            color: var(--color-secondary);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+
+        .footer-links a {
+            color: #007f9b;
+            text-underline-offset: 3px;
+        }
+    </style>
+    <link rel="stylesheet" href="email-glitch.css">
 </head>
 <body>
-    
+    <footer class="site-footer">
+        <nav class="footer-links" aria-label="Footer">
+            <a href="aboutus.html">About us</a>
+            <a href="safety.html">Safety and rehabilitation</a>
+            <a href="registration.html">Registration</a>
+            <a href="meetourstaff.html">Meet our staff</a>
+            <a href="mailto:dreamprojectregistration@gmail.com">Contact</a>
+            <a href="index.html#privacy">Privacy and safety</a>
+        </nav>
+        <span>D.R.E.A.M. Research Facility · Established 1998 · All rights reserved.</span>
+    </footer>
+    <script src="email-glitch.js"></script>
 </body>
 </html>

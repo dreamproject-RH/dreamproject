@@ -1,0 +1,48 @@
+.email-glitch {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  isolation: isolate;
+  overflow-wrap: anywhere;
+}
+
+.email-glitch::before,
+.email-glitch::after {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  content: attr(data-text);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.email-glitch::before {
+  z-index: -1;
+  color: #ff00ff;
+}
+
+.email-glitch::after {
+  z-index: -2;
+  color: #00a3c4;
+}
+
+.email-glitch:hover::before,
+.email-glitch:focus-visible::before {
+  clip-path: inset(20% 0 60% 0);
+  opacity: 0.8;
+  transform: translate(-2px, 1px);
+}
+
+.email-glitch:hover::after,
+.email-glitch:focus-visible::after {
+  clip-path: inset(60% 0 20% 0);
+  opacity: 0.8;
+  transform: translate(2px, -1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .email-glitch::before,
+  .email-glitch::after {
+    transform: none !important;
+  }
+}

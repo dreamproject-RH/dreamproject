@@ -1,0 +1,33 @@
+
+    .registration-email::after {
+      color: #ffffff; 
+      z-index: -2;
+      animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    }
+   
+    @keyframes glitch-anim-2 {
+        0% {
+          clip-path: inset(10% 0 60% 0);
+          transform: translate(2px, -1px);
+        }
+        20% {
+          clip-path: inset(80% 0 5% 0);
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          clip-path: inset(30% 0 20% 0);
+          transform: translate(2px, 1px);
+        }
+        60% {
+          clip-path: inset(10% 0 80% 0);
+          transform: translate(-1px, -1px);
+        }
+        80% {
+          clip-path: inset(50% 0 30% 0);
+          transform: translate(2px, -2px);
+        }
+        100% {
+          clip-path: inset(70% 0 10% 0);
+          transform: translate(-2px, 1px);
+        }
+    }
