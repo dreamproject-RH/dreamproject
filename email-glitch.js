@@ -1,9 +1,9 @@
 const emailGlitchCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%&/<>';
 
-document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+document.querySelectorAll('a[href^="mailto:"], a[data-email-glitch]').forEach((link) => {
   const originalText = link.textContent.trim();
 
-  if (!originalText.includes('@')) {
+  if (!originalText.includes('@') && !link.hasAttribute('data-email-glitch')) {
     return;
   }
 
