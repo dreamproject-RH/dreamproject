@@ -46,3 +46,58 @@ document.querySelectorAll('a[href^="mailto:"], a[data-email-glitch]').forEach((l
   link.addEventListener('blur', resetText);
   link.addEventListener('focus', startAnimation);
 });
+
+const scrambleStorageKey = 'dreamproject-text-scrambled';
+const isStaffSignInPage = /(?:^|\/)staffsignin\.html$/i.test(window.location.pathname);
+
+if (!isStaffSignInPage) {
+  const originalText = new Map();
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let textNode;
+
+  while ((textNode = walker.nextNode())) {
+    const parent = textNode.parentElement;
+
+    if (
+      parent &&
+      !parent.closest(
+        'button, script, style, noscript, textarea, input, select, option, .email-glitch, [contenteditable="true"]'
+      )
+    ) {
+      originalText.set(textNode, textNode.nodeValue);
+    }
+  }
+
+  const jumble = (text) =>
+    text.replace(/[A-Za-z0-9]+/g, (word) => {
+      const characters = [...word];
+
+      for (let index = characters.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [characters[index], characters[swapIndex]] = [characters[swapIndex], characters[index]];
+      }
+
+      if (characters.join('') === word && characters.length > 1) {
+        characters.push(characters.shift());
+      }
+
+      return characters.join('');
+    });
+
+  const setScrambled = (scrambled) => {
+    originalText.forEach((text, node) => {
+      node.nodeValue = scrambled ? jumble(text) : text;
+    });
+
+    document.querySelector('#scramble-pages')?.setAttribute('aria-pressed', String(scrambled));
+    document.querySelector('#restore-pages')?.setAttribute('aria-pressed', String(!scrambled));
+    localStorage.setItem(scrambleStorageKey, String(scrambled));
+  };
+
+  if (localStorage.getItem(scrambleStorageKey) === 'true') {
+    setScrambled(true);
+  }
+
+  document.querySelector('#scramble-pages')?.addEventListener('click', () => setScrambled(true));
+  document.querySelector('#restore-pages')?.addEventListener('click', () => setScrambled(false));
+}
