@@ -48,43 +48,23 @@
             overflow-wrap: anywhere;
         }
 
-        .message-content button {
+        .message-content button,
+        .message-content .message-button {
             min-height: 44px;
             margin: 0.25em;
             padding: 0.5em 1em;
             font: inherit;
         }
 
-        .confirmation-dialog {
-            width: min(100% - 32px, 360px);
-            padding: 24px;
-            border: 0;
-            border-radius: 8px;
-            color: #111;
-            font: inherit;
-            text-align: left;
+        .message-content .message-button {
+            display: inline-block;
+            border: 1px solid buttonborder;
+            border-radius: 2px;
+            background-color: buttonface;
+            color: buttontext;
+            text-decoration: none;
         }
 
-        .confirmation-dialog::backdrop {
-            background: rgb(0 0 0 / 45%);
-        }
-
-        .confirmation-dialog h2 {
-            margin: 0 0 20px;
-            font-size: 1.25em;
-        }
-
-        .confirmation-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-        }
-
-        .confirmation-actions button {
-            min-height: 44px;
-            padding: 0.5em 1em;
-            font: inherit;
-        }
     </style>
 </head>
 <body class="message-body">
@@ -106,24 +86,13 @@
 
         <br>
 
-        <button type="button" href="/left">LEFT</button>
-        <button type="button" href="/right">RIGHT</button>
+        <a class="message-button" href="left.html">LEFT</a>
+        <a class = message-button href="right.html">RIGHT</a>
     </main>
-    <dialog class="confirmation-dialog" aria-labelledby="confirmation-title">
-        <h2 id="confirmation-title">Are you sure?</h2>
-        <form method="dialog" class="confirmation-actions">
-            <button type="submit" value="cancel">Cancel</button>
-            <button type="submit" value="confirm">OK</button>
-        </form>
-    </dialog>
     <script>
-        const confirmationDialog = document.querySelector('.confirmation-dialog');
+        
 
-        document.querySelectorAll('.message-content button').forEach((button) => {
-            button.addEventListener('click', () => {
-                confirmationDialog.showModal();
-            });
-        });
     </script>
+    <script src="clean-urls.js"></script>
 </body>
 </html>
